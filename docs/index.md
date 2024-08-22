@@ -3,15 +3,15 @@
 layout: home
 
 hero:
-  name: "My Awesome Project"
-  text: "A VitePress Site"
-  tagline: My great project tagline
+  name: "Lon"
+  text: "web quick dev temp"
+  tagline: Monorepo、TypeScript、Vite
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: 快速开始
+      link: /pages/quick-start
     - theme: alt
-      text: API Examples
+      text: GitLab
       link: /api-examples
 
 features:
