@@ -1,0 +1,23 @@
+{
+  "name": "@lon/request",
+  "version": "1.0.0",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "dependencies": {
+    "@lon/utils": "workspace:*",
+    "@lon/tsconfig": "workspace:*",
+    "axios": "^1.7.4"
+  },
+  "devDependencies": {
+    "axios-mock-adapter": "^2.0.0"
+  }
+}
