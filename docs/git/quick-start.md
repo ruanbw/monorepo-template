@@ -5,6 +5,7 @@
 主要是在提交代码时标识本次提交的属性
 
 - `feat`: 新功能（feature）
+- `update`: 更新
 - `fix`: 修补bug
 - `docs`: 文档（documentation）
 - `style`: 格式（不影响代码运行的变动）
