@@ -13,9 +13,9 @@
     }
   },
   "dependencies": {
-    "@lon/utils": "workspace:*",
     "@lon/tsconfig": "workspace:*",
-    "axios": "^1.7.4"
+    "@lon/utils": "workspace:*",
+    "axios": "^1.7.7"
   },
   "devDependencies": {
     "axios-mock-adapter": "^2.0.0"
