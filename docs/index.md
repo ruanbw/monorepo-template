@@ -9,7 +9,7 @@ hero:
   actions:
     - theme: brand
       text: 快速开始
-      link: /pages/quick-start
+      link: /docs/quick-start
     - theme: alt
       text: GitLab
       link: /api-examples
