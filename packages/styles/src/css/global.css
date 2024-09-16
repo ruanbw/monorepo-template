@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --basic-header-height: 60px;
+}
+
+.basic-header {
+    height: var(--basic-header-height);
+}
+
+.basic-main {
+    width: 100%;
+    height: calc(100vh - var(--basic-header-height));
+    overflow-y: auto;
+}
