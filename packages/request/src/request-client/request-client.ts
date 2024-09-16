@@ -1,43 +1,43 @@
+import { merge } from '@lon/utils'
+
+import axios from 'axios'
+
 import type {
   AxiosInstance,
   AxiosRequestConfig,
   AxiosResponse,
   CreateAxiosDefaults,
   InternalAxiosRequestConfig,
-} from 'axios';
+} from 'axios'
 
+import { FileDownloader } from './modules/downloader'
+
+import { InterceptorManager } from './modules/interceptor'
+import { FileUploader } from './modules/uploader'
 import type {
   MakeAuthorizationFn,
   MakeErrorMessageFn,
   MakeRequestHeadersFn,
   RequestClientOptions,
-} from './types';
-
-import { merge } from '@lon/utils';
-
-import axios from 'axios';
-
-import { FileDownloader } from './modules/downloader';
-import { InterceptorManager } from './modules/interceptor';
-import { FileUploader } from './modules/uploader';
+} from './types'
 
 class RequestClient {
-  private instance: AxiosInstance;
-  private makeAuthorization: MakeAuthorizationFn | undefined;
-  private makeErrorMessage: MakeErrorMessageFn | undefined;
-  private makeRequestHeaders: MakeRequestHeadersFn | undefined;
+  private instance: AxiosInstance
+  private makeAuthorization: MakeAuthorizationFn | undefined
+  private makeErrorMessage: MakeErrorMessageFn | undefined
+  private makeRequestHeaders: MakeRequestHeadersFn | undefined
 
-  public addRequestInterceptor: InterceptorManager['addRequestInterceptor'];
-  public addResponseInterceptor: InterceptorManager['addResponseInterceptor'];
-  public download: FileDownloader['download'];
-  public upload: FileUploader['upload'];
+  public addRequestInterceptor: InterceptorManager['addRequestInterceptor']
+  public addResponseInterceptor: InterceptorManager['addResponseInterceptor']
+  public download: FileDownloader['download']
+  public upload: FileUploader['upload']
 
   /**
    * 构造函数，用于创建Axios实例
    * @param options - Axios请求配置，可选
    */
   constructor(options: RequestClientOptions = {}) {
-    this.bindMethods();
+    this.bindMethods()
     // 合并默认配置和传入的配置
     const defaultConfig: CreateAxiosDefaults = {
       headers: {
@@ -45,151 +45,152 @@ class RequestClient {
       },
       // 默认超时时间
       timeout: 10_000,
-    };
+    }
     const {
       makeAuthorization,
       makeErrorMessage,
       makeRequestHeaders,
       ...axiosConfig
-    } = options;
-    const requestConfig = merge(axiosConfig, defaultConfig);
+    } = options
+    const requestConfig = merge(axiosConfig, defaultConfig)
 
-    this.instance = axios.create(requestConfig);
-    this.makeAuthorization = makeAuthorization;
-    this.makeRequestHeaders = makeRequestHeaders;
-    this.makeErrorMessage = makeErrorMessage;
+    this.instance = axios.create(requestConfig)
+    this.makeAuthorization = makeAuthorization
+    this.makeRequestHeaders = makeRequestHeaders
+    this.makeErrorMessage = makeErrorMessage
 
     // 实例化拦截器管理器
-    const interceptorManager = new InterceptorManager(this.instance);
-    this.addRequestInterceptor =
-      interceptorManager.addRequestInterceptor.bind(interceptorManager);
-    this.addResponseInterceptor =
-      interceptorManager.addResponseInterceptor.bind(interceptorManager);
+    const interceptorManager = new InterceptorManager(this.instance)
+    this.addRequestInterceptor
+      = interceptorManager.addRequestInterceptor.bind(interceptorManager)
+    this.addResponseInterceptor
+      = interceptorManager.addResponseInterceptor.bind(interceptorManager)
 
     // 实例化文件上传器
-    const fileUploader = new FileUploader(this);
-    this.upload = fileUploader.upload.bind(fileUploader);
+    const fileUploader = new FileUploader(this)
+    this.upload = fileUploader.upload.bind(fileUploader)
     // 实例化文件下载器
-    const fileDownloader = new FileDownloader(this);
-    this.download = fileDownloader.download.bind(fileDownloader);
+    const fileDownloader = new FileDownloader(this)
+    this.download = fileDownloader.download.bind(fileDownloader)
 
     // 设置默认的拦截器
-    this.setupInterceptors();
+    this.setupInterceptors()
   }
 
   private bindMethods() {
     const propertyNames = Object.getOwnPropertyNames(
       Object.getPrototypeOf(this),
-    );
+    )
     propertyNames.forEach((propertyName) => {
-      const propertyValue = (this as any)[propertyName];
+      const propertyValue = (this as any)[propertyName]
       if (
-        typeof propertyValue === 'function' &&
-        propertyName !== 'constructor'
+        typeof propertyValue === 'function'
+        && propertyName !== 'constructor'
       ) {
-        (this as any)[propertyName] = propertyValue.bind(this);
+        (this as any)[propertyName] = propertyValue.bind(this)
       }
-    });
+    })
   }
 
   private setupDefaultResponseInterceptor() {
     this.addRequestInterceptor(
       (config: InternalAxiosRequestConfig) => {
-        const authorization = this.makeAuthorization?.(config);
+        const authorization = this.makeAuthorization?.(config)
         if (authorization) {
-          const { token } = authorization.tokenHandler?.() ?? {};
-          config.headers[authorization.key || 'Authorization'] = token;
+          const { token } = authorization.tokenHandler?.() ?? {}
+          config.headers[authorization.key || 'Authorization'] = token
         }
 
-        const requestHeader = this.makeRequestHeaders?.(config);
+        const requestHeader = this.makeRequestHeaders?.(config)
 
         if (requestHeader) {
           for (const [key, value] of Object.entries(requestHeader)) {
-            config.headers[key] = value;
+            config.headers[key] = value
           }
         }
 
-        return config;
+        return config
       },
       (error: any) => Promise.reject(error),
-    );
+    )
     this.addResponseInterceptor(
       (response: AxiosResponse) => {
-        return response;
+        return response
       },
       (error: any) => {
         if (axios.isCancel(error)) {
-          return Promise.reject(error);
+          return Promise.reject(error)
         }
 
-        const err: string = error?.toString?.() ?? '';
-        let errMsg = '';
+        const err: string = error?.toString?.() ?? ''
+        let errMsg = ''
         if (err?.includes('Network Error')) {
           errMsg = 'fallback.http.networkError'
-        } else if (error?.message?.includes?.('timeout')) {
+        }
+        else if (error?.message?.includes?.('timeout')) {
           errMsg = 'fallback.http.requestTimeout'
         }
         if (errMsg) {
-          this.makeErrorMessage?.(errMsg);
-          return Promise.reject(error);
+          this.makeErrorMessage?.(errMsg)
+          return Promise.reject(error)
         }
 
-        let errorMessage = error?.response?.data?.error?.message ?? '';
-        const status = error?.response?.status;
+        let errorMessage = error?.response?.data?.error?.message ?? ''
+        const status = error?.response?.status
 
         switch (status) {
           case 400: {
             errorMessage = 'fallback.http.badRequest'
-            break;
+            break
           }
 
           case 401: {
             errorMessage = 'fallback.http.unauthorized'
-            this.makeAuthorization?.().unAuthorizedHandler?.();
-            break;
+            this.makeAuthorization?.().unAuthorizedHandler?.()
+            break
           }
           case 403: {
             errorMessage = 'fallback.http.forbidden'
-            break;
+            break
           }
           // 404请求不存在
           case 404: {
             errorMessage = 'fallback.http.notFound'
-            break;
+            break
           }
           case 408: {
             errorMessage = 'fallback.http.requestTimeout'
 
-            break;
+            break
           }
           default: {
             errorMessage = 'fallback.http.internalServerError'
           }
         }
 
-        this.makeErrorMessage?.(errorMessage);
-        return Promise.reject(error);
+        this.makeErrorMessage?.(errorMessage)
+        return Promise.reject(error)
       },
-    );
+    )
   }
 
   private setupInterceptors() {
     // 默认拦截器
-    this.setupDefaultResponseInterceptor();
+    this.setupDefaultResponseInterceptor()
   }
 
   /**
    * DELETE请求方法
    */
   public delete<T = any>(url: string, config?: AxiosRequestConfig): Promise<T> {
-    return this.request<T>(url, { ...config, method: 'DELETE' });
+    return this.request<T>(url, { ...config, method: 'DELETE' })
   }
 
   /**
    * GET请求方法
    */
   public get<T = any>(url: string, config?: AxiosRequestConfig): Promise<T> {
-    return this.request<T>(url, { ...config, method: 'GET' });
+    return this.request<T>(url, { ...config, method: 'GET' })
   }
 
   /**
@@ -200,7 +201,7 @@ class RequestClient {
     data?: any,
     config?: AxiosRequestConfig,
   ): Promise<T> {
-    return this.request<T>(url, { ...config, data, method: 'POST' });
+    return this.request<T>(url, { ...config, data, method: 'POST' })
   }
 
   /**
@@ -211,7 +212,7 @@ class RequestClient {
     data?: any,
     config?: AxiosRequestConfig,
   ): Promise<T> {
-    return this.request<T>(url, { ...config, data, method: 'PUT' });
+    return this.request<T>(url, { ...config, data, method: 'PUT' })
   }
 
   /**
@@ -222,12 +223,13 @@ class RequestClient {
       const response: AxiosResponse<T> = await this.instance({
         url,
         ...config,
-      });
-      return response as T;
-    } catch (error: any) {
-      throw error.response ? error.response.data : error;
+      })
+      return response as T
+    }
+    catch (error: any) {
+      throw error.response ? error.response.data : error
     }
   }
 }
 
-export { RequestClient };
+export { RequestClient }

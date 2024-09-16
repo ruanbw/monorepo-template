@@ -51,7 +51,6 @@ pnpm create vite@latest
 ```
 :::
 
-
 ```
 .
 ├── package.json

@@ -1,0 +1,26 @@
+{
+  "name": "@lon/types",
+  "version": "1.0.0",
+  "homepage": "https://github.com/londontun/lon-admin-web",
+  "bugs": "https://github.com/londontun/lon-admin-web/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/londontun/lon-admin-web.git",
+    "directory": "packages/types"
+  },
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./global": {
+      "types": "./global.d.ts"
+    }
+  },
+  "dependencies": {
+    "vue": "^3.5.3",
+    "vue-router": "^4.4.3"
+  }
+}

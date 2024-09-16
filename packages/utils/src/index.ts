@@ -1,1 +1,1 @@
-export { defu as merge } from 'defu';
+export { defu as merge } from 'defu'

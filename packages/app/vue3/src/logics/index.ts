@@ -1,6 +1,7 @@
-import { useDark } from "@vueuse/core";
+import { useDark } from '@vueuse/core'
+import { nextTick } from 'vue'
 
-export const isDark = useDark();
+export const isDark = useDark()
 
 /**
  * Credit to [@hooray](https://github.com/hooray)
@@ -51,23 +52,22 @@ export function toggleDark(event: MouseEvent) {
 }
 
 /**
- * 
-// views-transition-api
-::view-transition-old(root),
-::view-transition-new(root) {
-  animation: none;
-  mix-blend-mode: normal;
-}
-::view-transition-old(root) {
-  z-index: 1;
-}
-::view-transition-new(root) {
-  z-index: 9999;
-}
-.dark::view-transition-old(root) {
-  z-index: 9999;
-}
-.dark::view-transition-new(root) {
-  z-index: 1;
-}
+ // views-transition-api
+ ::view-transition-old(root),
+ ::view-transition-new(root) {
+ animation: none;
+ mix-blend-mode: normal;
+ }
+ ::view-transition-old(root) {
+ z-index: 1;
+ }
+ ::view-transition-new(root) {
+ z-index: 9999;
+ }
+ .dark::view-transition-old(root) {
+ z-index: 9999;
+ }
+ .dark::view-transition-new(root) {
+ z-index: 1;
+ }
  */

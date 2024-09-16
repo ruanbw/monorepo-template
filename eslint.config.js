@@ -4,7 +4,7 @@ export default antfu({
   vue: true,
   javascript: true,
   typescript: true,
-  unocss: true,
+  tailwindcss: true,
   rules: {
     'no-undef': 'off',
   },

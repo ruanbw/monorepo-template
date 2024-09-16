@@ -2,15 +2,15 @@ import type {
   AxiosInstance,
   AxiosResponse,
   InternalAxiosRequestConfig,
-} from 'axios';
+} from 'axios'
 
-const errorHandler = (res: Error) => Promise.reject(res);
+const errorHandler = (res: Error) => Promise.reject(res)
 
 class InterceptorManager {
-  private axiosInstance: AxiosInstance;
+  private axiosInstance: AxiosInstance
 
   constructor(instance: AxiosInstance) {
-    this.axiosInstance = instance;
+    this.axiosInstance = instance
   }
 
   addRequestInterceptor(
@@ -22,7 +22,7 @@ class InterceptorManager {
     this.axiosInstance.interceptors.request.use(
       fulfilled,
       rejected || errorHandler,
-    );
+    )
   }
 
   addResponseInterceptor<T = any>(
@@ -34,8 +34,8 @@ class InterceptorManager {
     this.axiosInstance.interceptors.response.use(
       fulfilled,
       rejected || errorHandler,
-    );
+    )
   }
 }
 
-export { InterceptorManager };
+export { InterceptorManager }
