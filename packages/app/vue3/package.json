@@ -4,24 +4,24 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc -b && vite build",
+    "build": "pnpm vite build --mode production",
+    "build:analyze": "pnpm vite build --mode analyze",
+    "dev": "pnpm vite --mode development",
     "preview": "vite preview",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "typecheck": "vue-tsc --noEmit --skipLibCheck"
   },
   "dependencies": {
+    "@lon/request": "workspace:*",
     "@lon/styles": "workspace:*",
-    "@vueuse/core": "^11.0.3",
-    "ant-design-vue": "4.x",
-    "pinia": "^2.2.2",
-    "vue": "^3.5.3",
-    "vue-router": "^4.4.3"
-  },
-  "devDependencies": {
     "@lon/tailwind-config": "workspace:*",
     "@lon/tsconfig": "workspace:*",
     "@lon/types": "workspace:*",
-    "@lon/vite-config": "workspace:*"
+    "@lon/ui": "workspace:*",
+    "@lon/vite-config": "workspace:*",
+    "@vueuse/core": "^11.1.0",
+    "ant-design-vue": "~4.2.4",
+    "pinia": "^2.2.2",
+    "vue": "^3.5.6",
+    "vue-router": "^4.4.5"
   }
 }

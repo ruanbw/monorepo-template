@@ -31,4 +31,4 @@ function mergeRouteModules(
   return mergedRoutes
 }
 
-export { dynamicRoutes, coreRoutes }
+export { coreRoutes, dynamicRoutes }

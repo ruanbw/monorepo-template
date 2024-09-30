@@ -1,17 +1,14 @@
 <script setup lang="ts">
 import { toggleDark } from '@/logics'
-import { Button, Card } from 'ant-design-vue'
+import { Button } from '@lon/ui'
 </script>
 
 <template>
   <div class="analytics">
     <div>123</div>
-    <Button type="primary" @click="toggleDark">
+    <Button @click="toggleDark">
       toggle dark mode
     </Button>
-    <Card v-for="item in 10" class="mb-5">
-      <img src="https://picsum.photos/200/300">
-    </Card>
   </div>
 </template>
 

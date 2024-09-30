@@ -1,6 +1,6 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import { coreRoutes, dynamicRoutes } from '@/router/routes'
 import { createRouterGuard } from '@/router/guard'
+import { coreRoutes, dynamicRoutes } from '@/router/routes'
+import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
   history: createWebHistory(),

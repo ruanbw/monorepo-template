@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a481d4c3-b64e-4037-a613-7a50e9b14978" name="Changes" comment="chore: add ant-design-vue">
+      <change afterPath="$PROJECT_DIR$/packages/ui/build.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/ui/components.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/ui/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/ui/postcss.config.mjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/ui/src/components/ui/button/Button.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/ui/src/components/ui/button/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/ui/src/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/ui/tailwind.config.mjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/ui/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/extensions.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/app/vue3/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/packages/app/vue3/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/app/vue3/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/app/vue3/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/app/vue3/postcss.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/packages/app/vue3/postcss.config.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/app/vue3/src/api/core/auth.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/app/vue3/src/api/core/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/app/vue3/src/api/core/user.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/app/vue3/src/api/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/app/vue3/src/api/request.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/app/vue3/src/assets/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/app/vue3/src/layouts/components/basic/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/app/vue3/src/layouts/components/basic/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/app/vue3/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/app/vue3/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/app/vue3/src/router/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/app/vue3/src/router/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/app/vue3/src/router/routes/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/app/vue3/src/router/routes/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/app/vue3/src/router/routes/modules/dashboard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/app/vue3/src/router/routes/modules/dashboard.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/app/vue3/src/views/dashboard/analytics/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/packages/app/vue3/src/views/dashboard/analytics/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/app/vue3/tailwind.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/packages/app/vue3/tailwind.config.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/app/vue3/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/app/vue3/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/request/src/request-client/modules/downloader.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/request/src/request-client/modules/downloader.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/request/src/request-client/modules/uploader.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/request/src/request-client/modules/uploader.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/request/src/request-client/request-client.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/request/src/request-client/request-client.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/styles/src/css/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/packages/styles/src/css/global.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/tailwind-config/build.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/tailwind-config/build.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/tailwind-config/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/tailwind-config/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/tailwind-config/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/tailwind-config/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/tailwind-config/src/postcss.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/tailwind-config/src/postcss.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/types/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/types/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/utils/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/utils/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/utils/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/utils/src/index.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/ruanbw/projects/monorepo-template/packages/ui",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "npm.tailwind-config > stub.executor": "Run",
+    "npm.ui > stub.executor": "Run",
+    "npm.vue3 > build.executor": "Run",
+    "npm.vue3 > preview.executor": "Run",
+    "ts.external.directory.path": "/Users/ruanbw/projects/monorepo-template/node_modules/typescript/lib"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/packages/ui" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.vue3 &gt; preview">
+    <configuration name="tailwind-config &gt; stub" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/packages/tailwind-config/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="stub" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="ui &gt; stub" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/packages/ui/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="stub" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="vue3 &gt; preview" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/packages/app/vue3/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="preview" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.vue3 &gt; preview" />
+        <item itemvalue="npm.ui &gt; stub" />
+        <item itemvalue="npm.tailwind-config &gt; stub" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="chore: add ant-design-vue" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: add ant-design-vue" />
+  </component>
+</project>

@@ -1,6 +1,6 @@
-import { beforeEach, describe, expect, it, vi } from 'vitest'
-
 import type { AxiosRequestConfig, AxiosResponse } from 'axios'
+
+import { beforeEach, describe, expect, it, vi } from 'vitest'
 
 import { FileUploader } from './uploader'
 

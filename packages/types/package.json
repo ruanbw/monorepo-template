@@ -1,15 +1,15 @@
 {
   "name": "@lon/types",
+  "type": "module",
   "version": "1.0.0",
+  "license": "MIT",
   "homepage": "https://github.com/londontun/lon-admin-web",
-  "bugs": "https://github.com/londontun/lon-admin-web/issues",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/londontun/lon-admin-web.git",
     "directory": "packages/types"
   },
-  "license": "MIT",
-  "type": "module",
+  "bugs": "https://github.com/londontun/lon-admin-web/issues",
   "exports": {
     ".": {
       "types": "./src/index.ts",

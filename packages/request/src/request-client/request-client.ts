@@ -1,7 +1,3 @@
-import { merge } from '@lon/utils'
-
-import axios from 'axios'
-
 import type {
   AxiosInstance,
   AxiosRequestConfig,
@@ -10,16 +6,20 @@ import type {
   InternalAxiosRequestConfig,
 } from 'axios'
 
-import { FileDownloader } from './modules/downloader'
-
-import { InterceptorManager } from './modules/interceptor'
-import { FileUploader } from './modules/uploader'
 import type {
   MakeAuthorizationFn,
   MakeErrorMessageFn,
   MakeRequestHeadersFn,
   RequestClientOptions,
 } from './types'
+
+import { merge } from '@lon/utils'
+
+import axios from 'axios'
+
+import { FileDownloader } from './modules/downloader'
+import { InterceptorManager } from './modules/interceptor'
+import { FileUploader } from './modules/uploader'
 
 class RequestClient {
   private instance: AxiosInstance
